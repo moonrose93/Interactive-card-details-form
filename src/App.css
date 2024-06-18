@@ -1,38 +1,302 @@
+body {
+  background-image: url('./images/bg-main-desktop.png');
+  
+  background-repeat: no-repeat;
+  background-size: 30% 100vh; /* Width 100% and height 100vh */
+  background-position: top left;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transform: translate(-50%, -50%);   
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 1200px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.left {
+  display: grid;
+  grid-template-rows: auto; /* Automatically size rows to fit the content */
+  gap: 10px; /* Optional: add some space between items */
+  width: 100%;
+  max-width: 700px;
+  align-items: center;
+}
+
+.front {
+  
+  position: relative;
+  top: -150px;
+  right: 50px;
+}
+
+.back {
+  position: relative;
+  left: 50px;
+  top: -150px;
+}
+
+.right {
+  display: grid;
+  grid-template-rows: auto; /* Automatically size rows to fit the content */
+  gap: 20px; /* Optional: add some space between items */
+  width: 100%;
+  max-width: 400px;
+}
+
+.card-input, .name-input {
+  
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid gray;
+  outline: none;
+}
+.three-inputs {
+ display: flex;
+ gap: 10px;
+}
+
+
+
+.three-inputs input {
+ 
+  padding: 15px;
+  border-radius: 15px;
+  outline: none;
+  border: 1px solid gray;
+  
+}
+
+.one , .two{
+  width: 15%;
+  margin-right: 20px;
+}
+
+.three {
+  width: 30%;
+}
+
+button{
+  padding: 15px;
+  background-color: darkblue;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 15px;
+}
+
+
+.blank-divs{
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+
+
+
+.blank-one, .blank-two, .blank-three {
+  color: red;
+ visibility: hidden;
+
+}
+
+
+.wrong{
+  display: none;
+  color: red;
+}
+
+
+.info{
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+}
+
+
+.card-front{
+  position: relative;
+  top: 100px;
+  z-index: 1;
+  width: 350px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.logo{
+  width: 350px;
+  margin-bottom: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.number{
+  font-size: 2.2rem;
+  font-family: sans-serif;
+}
+
+.cvc{
+  position: relative;
+  top: 5px;
+  left: 400px;
+  z-index: 1;
+  color: black;
+  width: 80px;
+}
+
+
+.right-thank-you{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.continue{
+  width: 100%;  
+  max-width: 400px;
+}
+
+
+@media(max-width:420px){
+  body {
+    background-image: url('./images/bg-main-mobile.png');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 100% 30vh; 
+    background-position: top left;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .Mobile {
+    width: 100%;    
+    max-width: 400px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+  
+  .cards {
+      display: grid;
+      grid-template-rows: auto;/* 1 rows are created. */
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+  
+    
+    }
+  
+    /*Yes, if you define a grid container with grid-template-rows: repeat(3, auto); but only place one child div inside it,
+    the grid will still define three rows.However, only the first row will be occupied by the content,
+    and the other two rows will be empty. Here's a detailed explanation:*/
+  
+  .cards img {
+    width: 100%;
+    max-width: 330px;
+  }
+  
+  .card-front-mobile{
+      position: relative;
+      top: 300px;
+      right: 5px;
+      z-index: 3;
+      width: 320px;
+      color: white;
+  
+    }
+  
+  
+    .cvc-mobile{
+      position: relative;
+      top: -5px;
+      left: 280px;
+      z-index: 1;
+      color: black;
+      width: 80px;
+    }
+    .info{
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+    }
+    
+  
+    .number-mobile{
+      font-size: 1rem;
+      font-family: sans-serif;
+    }
+  
+    .logo{
+      width: 50px;
+      margin-bottom: 40px;
+  
+    }
+    
+  
+  .front-mobile {
+    z-index: 2;
+    position: relative;
+    top: -50px;
+    left: -20px;
+  }
+  
+  .card-details {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .back-mobile {
+    position: relative;
+    top: 25px;
+    right: -20px;
+    z-index: 1;
+  }
+  
+  .three-inputs-mobile {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-between;
+  }
+  
+  .one-mobile, .two-mobile {
+    width: 40%;
+    margin-right: 5px;
+  }
+  
+  .three-mobile {
+    width: 20%;
+  }
+  
+  .blank-divs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ensure the width is consistent */
+    max-width: 400px;
+    margin-top: 20px; /* Adjust this margin to provide space for the inputs */
+  }
+  
+  
 }
