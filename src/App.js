@@ -1,8 +1,7 @@
 import './App.css';
 import cardBack from './images/bg-card-back.png';
 import cardFront from './images/bg-card-front.png';
-import bgDesktop from './images/bg-main-desktop.png';
-import bgMobile from './images/bg-main-mobile.png';
+
 import cardLogo from './images/card-logo.svg';
 import iconCompleted from './images/icon-complete.svg';
 import Mobile from './Mobile';
@@ -16,10 +15,10 @@ function App() {
   const [yearValue, setYearValue] = useState('');
   const [cvcValue, setCvcValue] = useState('');
   const [cardNumber, setCardNumber] = useState('');
-  const [name,setName] = useState('');
+  const [name, setName] = useState('');
   const [cvc, setCvc] = useState('');
-  const [month,setMonth] = useState('');
-  const [year,setYear] = useState('');
+  const [month, setMonth] = useState('');
+  const [year, setYear] = useState('');
 
   const [allInputs, setAllInputs] = useState(false);
 
@@ -45,14 +44,6 @@ function App() {
   const isValidCvc = (cvc) => {
     const cvcRegex = /^\d{3}$/;
     return cvcRegex.test(cvc);
-  };
-
-  const handleYearChange = (e) => {
-    setYearValue(e.target.value);
-  };
-
-  const handleCvcChange = (e) => {
-    setCvcValue(e.target.value);
   };
 
   const handleNumberChange = (e) => {
