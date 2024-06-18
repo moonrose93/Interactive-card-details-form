@@ -7,17 +7,16 @@ import cardLogo from './images/card-logo.svg';
 import { useState } from 'react';
 
 export default function Mobile() {
-
   const [nameValue, setNameValue] = useState('');
   const [numberValue, setNumberValue] = useState('');
   const [monthValue, setMonthValue] = useState('');
   const [yearValue, setYearValue] = useState('');
   const [cvcValue, setCvcValue] = useState('');
   const [cardNumber, setCardNumber] = useState('');
-  const [name,setName] = useState('');
+  const [name, setName] = useState('');
   const [cvc, setCvc] = useState('');
-  const [month,setMonth] = useState('');
-  const [year,setYear] = useState('');
+  const [month, setMonth] = useState('');
+  const [year, setYear] = useState('');
 
   const [allInputs, setAllInputs] = useState(false);
 
@@ -45,14 +44,6 @@ export default function Mobile() {
     return cvcRegex.test(cvc);
   };
 
-  const handleYearChange = (e) => {
-    setYearValue(e.target.value);
-  };
-
-  const handleCvcChange = (e) => {
-    setCvcValue(e.target.value);
-  };
-
   const handleNumberChange = (e) => {
     setNumberValue(e.target.value);
   };
@@ -77,15 +68,12 @@ export default function Mobile() {
     }
   };
 
-
-
   return (
     <div className='Mobile'>
       <div className="cards">
         <div className='card-front-mobile'>
-          <p className='cvc-mobile'>{cvc ?cvc: 'CVC'}</p>
+          <p className='cvc-mobile'>{cvc ? cvc : 'CVC'}</p>
           <div className='logo'><img src={cardLogo} alt="Card Logo" /></div>
-          
           <p className='number-mobile'>{cardNumber ? cardNumber : '0000 0000 0000 0000'}</p>
           <div className='info'>
             <p>{name ? name : 'Jane Appleseed'}</p>
